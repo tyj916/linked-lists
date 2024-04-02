@@ -6,6 +6,8 @@ list.prepend(5321);
 list.append(3423);
 list.append('pop me');
 list.pop();
+list.insertAt('insert me', 1);
+list.insertAt('insert head', 0);
 console.log(list.head().value);
 console.log(list.tail().value);
 console.log(list.size());

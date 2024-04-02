@@ -98,6 +98,22 @@ export function LinkedList() {
     return string + 'null';
   }
 
+  function insertAt(value, index) {
+    if (index === 0 || !headNode) {
+      prepend(value);
+    } else {
+      let tmp = headNode;
+      let count = 0;
+
+      while (tmp && count < index - 1) {
+        tmp = tmp.nextNode;
+        count++;
+      }
+
+      tmp.nextNode = Node(value, tmp.nextNode);
+    }
+  }
+
   return {
     append,
     prepend,
@@ -109,6 +125,7 @@ export function LinkedList() {
     contains,
     find,
     toString,
+    insertAt,
   }
 }
 
