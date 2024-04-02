@@ -114,6 +114,24 @@ export function LinkedList() {
     }
   }
 
+  function removeAt(index) {
+    if (index > size()) return;
+
+    if (index === 0) {
+      headNode = headNode.nextNode;
+    } else {
+      let tmp = headNode;
+      let count = 0;
+
+      while (count < index - 1) {
+        tmp = tmp.nextNode;
+        count++;
+      }
+
+      tmp.nextNode = tmp.nextNode.nextNode;
+    }
+  }
+
   return {
     append,
     prepend,
@@ -126,6 +144,7 @@ export function LinkedList() {
     find,
     toString,
     insertAt,
+    removeAt,
   }
 }
 
